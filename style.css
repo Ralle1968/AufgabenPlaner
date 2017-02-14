@@ -19,8 +19,18 @@
 	justify-content: center;
 	align-items: center;
 }
+
+.login-links {
+	width: 160px;
+	top: 5%;
+	right: 85px;
+	position: absolute;
+}
+
 a:link, a:visited {
 	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
+	font-size: 20px;
 	color: rgba(0,0,0,.87);
+	margin-left: 10px;
+	text-decoration: none;
 }
