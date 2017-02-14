@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title></title>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-blue.min.css" />
+	<link rel="stylesheet" type="text/css" href="dialog-polyfill.css" />
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+	<!-- <dialog id="login-dialog" class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Sign In</h4>
+    <div class="mdl-dialog__content">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    		<input class="mdl-textfield__input" type="text" id="sample3">
+    		<label class="mdl-textfield__label" for="sample3">Email...</label>
+  		</div>
+  		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    		<input class="mdl-textfield__input" type="text" id="sample3">
+    		<label class="mdl-textfield__label" for="sample3">Password...</label>
+  		</div>
+    </div>
+    <div class="mdl-dialog__actions">
+     	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+  			Sign In
+			</button>
+    </div>
+  	</dialog> -->
+  
+  
+		<div class="login-cover">
+		<a href="#">Sign In</a>
+		<a href="#">Register</a>
+			<img src="images/titel.png">
+			<h1>AufgabenPlaner <small>by Ralf Johann Gräf</small></h1>
+		</div>
+	</div>
 	<div class="mdl-layout mdl-js-layout">
 	  <header class="mdl-layout__header">
 	    <div class="mdl-layout-icon"></div>
@@ -43,6 +73,13 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"
 	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 	crossorigin="anonymous"></script>
+	<script src="dialog-polyfill.js"></script>
+	<script>
+    var dialog = document.querySelector('dialog');
+    dialogPolyfill.registerDialog(dialog);
+    // Now dialog acts like a native <dialog>.
+    dialog.showModal();
+  	</script>
 	<script src="index.js"></script>
 </body>
 </html>
