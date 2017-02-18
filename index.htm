@@ -13,8 +13,8 @@
 <body> 
   <div class="login-cover">
 		<div class="login-links">
-		<a id="show-dialog" href="#" onclick="showDialog()">Sign In</a>
-		<a href="#" onclick="alert('Register')">Register</a>
+		<a id="show-dialog" href="#">Sign In</a>
+		<a id="show-register" href="#" >Register</a>
 		</div>
 			<img src="images/titel.png">
 			<h1>AufgabenPlaner <small>by Ralf Johann Gräf</small></h1>
@@ -39,8 +39,31 @@
 	  <div class="mdl-layout__drawer">
 	  </div>
 	</div>
-	
-  <dialog class="mdl-dialog">
+
+	<dialog id="register" class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Register</h4>
+    <div class="mdl-dialog__content">
+    <p id="registerError"></p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		    <input class="mdl-textfield__input" type="text" id="registerEmail">
+		    <label class="mdl-textfield__label" for="registerEmail">Email...</label>
+  		</div>
+  		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		    <input class="mdl-textfield__input" type="password" id="registerPassword">
+		    <label class="mdl-textfield__label" for="registerPassword">Password...</label>
+		  </div>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button id="registerBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+  		Register
+			</button>
+			<!-- MDL Spinner Component -->
+			<div id="registerProgress" class="mdl-spinner mdl-js-spinner is-active"></div>
+			<button id="closeBtn"type="button" class="mdl-button close">Cancel</button>
+    </div>
+  </dialog>
+
+  <dialog id="signIn" class="mdl-dialog">
     <h4 class="mdl-dialog__title">Sign In</h4>
     <div class="mdl-dialog__content">
     <p id="loginError"></p>
@@ -49,7 +72,7 @@
 		    <label class="mdl-textfield__label" for="loginEmail">Email...</label>
   		</div>
   		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		    <input class="mdl-textfield__input" type="text" id="loginPassword">
+		    <input class="mdl-textfield__input" type="password" id="loginPassword">
 		    <label class="mdl-textfield__label" for="loginPassword">Password...</label>
 		  </div>
     </div>

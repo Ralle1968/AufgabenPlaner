@@ -18,17 +18,30 @@ firebase.auth().onAuthStateChanged(function(user) {
    }
 });
 
-  var dialog = document.querySelector('dialog');
+  var dialog1 = document.querySelector('#signIn');
   var showDialogButton = document.querySelector('#show-dialog');
     // if (! dialog.showModal) {
     //   dialogPolyfill.registerDialog(dialog);
     // }
   showDialogButton.addEventListener('click', function() {
-    dialog.showModal();
+    dialog1.showModal();
   });
     
-  dialog.querySelector('.close').addEventListener('click', function() {
-    dialog.close();
+  dialog1.querySelector('.close').addEventListener('click', function() {
+    dialog1.close();
+  });
+
+  var dialog2 = document.querySelector('#register');
+  var showDialogButton = document.querySelector('#show-register');
+    // if (! dialog.showModal) {
+    //   dialogPolyfill.registerDialog(dialog);
+    // }
+  showDialogButton.addEventListener('click', function() {
+    dialog2.showModal();
+  });
+    
+  dialog2.querySelector('.close').addEventListener('click', function() {
+    dialog2.close();
   });
 
   $('#loginBtn').click(function(){

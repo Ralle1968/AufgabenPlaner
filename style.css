@@ -7,11 +7,11 @@
 	margin-left: 10px;
 }
 
-#loginProgress {
+#loginProgress, #registerProgress {
 	display: none;
 }
 
-#loginError {
+#loginError, #registerError {
 	display: none;
 	color: red;
 }
