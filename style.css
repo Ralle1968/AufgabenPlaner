@@ -49,16 +49,34 @@ a:link, a:visited {
 
 .mdl-layout {
 	align-items: center;
-  justify-content: center;
+  	justify-content: center;
 }
 .mdl-layout__content {
 	padding: 24px;
 	flex: none;
 }
 
-.Logoandschrift {
-	opacity: 0.2;
+.check {
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: absolute;
+	left: 0%;
+	top: 9.8%;
+	opacity: 0.2;
+}
+
+.mdl-button--colored{
+	float: right;
+}
+
+#close {
+	position: absolute;
+	right: 7px;
+	cursor: pointer;
+}
+
+.mdl-card__supporting-text {
+	margin-bottom: 30px;
 }
