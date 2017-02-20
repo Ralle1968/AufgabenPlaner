@@ -2,47 +2,50 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     $(".login-cover").hide();
-    var dialog = document.querySelector('dialog');
+    
+    var dialog = document.querySelector('#signInAndRegister');
     if (! dialog.showModal) {
-      dialogPolyfill.registerDialog(dialog);
+      dialogPolyfill.registerDialog(dialog1);
     }
     dialog.close();
+
   } else {
      //No user is signed in.
      $(".login-cover").show();
-     var dialog = document.querySelector('dialog');
+     var dialog = document.querySelector('#signInAndRegister');
      if (! dialog.showModal) {
        dialogPolyfill.registerDialog(dialog);
      }
+    
      // dialog.showModal();
    }
 });
 
-  var dialog1 = document.querySelector('#signIn');
+  var dialog = document.querySelector('#signInAndRegister');
   var showDialogButton = document.querySelector('#show-dialog');
     // if (! dialog.showModal) {
     //   dialogPolyfill.registerDialog(dialog);
     // }
   showDialogButton.addEventListener('click', function() {
-    dialog1.showModal();
+    dialog.showModal();
   });
     
-  dialog1.querySelector('.close').addEventListener('click', function() {
-    dialog1.close();
+  dialog.querySelector('.close').addEventListener('click', function() {
+    dialog.close();
   });
 
-  var dialog2 = document.querySelector('#register');
-  var showDialogButton = document.querySelector('#show-register');
-    // if (! dialog.showModal) {
-    //   dialogPolyfill.registerDialog(dialog);
-    // }
-  showDialogButton.addEventListener('click', function() {
-    dialog2.showModal();
-  });
+  // var dialog2 = document.querySelector('#register');
+  // var showDialogButton = document.querySelector('#show-register');
+  //   // if (! dialog.showModal) {
+  //   //   dialogPolyfill.registerDialog(dialog);
+  //   // }
+  // showDialogButton.addEventListener('click', function() {
+  //   dialog2.showModal();
+  // });
     
-  dialog2.querySelector('.close').addEventListener('click', function() {
-    dialog2.close();
-  });
+  // dialog2.querySelector('.close').addEventListener('click', function() {
+  //   dialog2.close();
+  // });
 
   $('#loginBtn').click(function(){
     var email = $('#loginEmail').val();
@@ -51,6 +54,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       $('#loginProgress').show();
       $('#loginBtn').hide();
       $('#closeBtn').hide();
+      $('#registerBtn').hide();
 
       firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
         $('#loginError').show().text(error.message);
@@ -63,17 +67,18 @@ firebase.auth().onAuthStateChanged(function(user) {
   });
 
    $('#registerBtn').click(function(){
-    var email = $('#registerEmail').val();
-    var password = $('#registerPassword').val();
+    var email = $('#loginEmail').val();
+    var password = $('#loginPassword').val();
     if (email !="" && password !="") {
-      $('#registerProgress').show();
+      $('#loginProgress').show();
       $('#registerBtn').hide();
+      $('#loginBtn').hide();
       $('#closeBtn').hide();
 
       firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
-        $('#registerError').show().text(error.message);
-        $('#registerProgress').hide();
+        $('#loginError').show().text(error.message);
+        $('#loginProgress').hide();
         $('#registerBtn').show();
         $('#closeBtn').show();
       });

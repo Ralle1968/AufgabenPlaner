@@ -13,8 +13,7 @@
 <body> 
   <div class="login-cover">
 		<div class="login-links">
-		<a id="show-dialog" href="#">Sign In</a>
-		<a id="show-register" href="#" >Register</a>
+		<a id="show-dialog" href="#">Sign In/Register</a>
 		</div>
 			<img src="images/titel.png">
 			<h1>AufgabenPlaner <small>by Ralf Johann Gräf</small></h1>
@@ -40,30 +39,33 @@
 	  </div>
 	</div>
 
-	<dialog id="register" class="mdl-dialog">
-    <h4 class="mdl-dialog__title">Register</h4>
+	<dialog id="signInAndRegister" class="mdl-dialog">
+    <h4 class="mdl-dialog__title">SignIn/Register</h4>
     <div class="mdl-dialog__content">
     <p id="registerError"></p>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		    <input class="mdl-textfield__input" type="text" id="registerEmail">
-		    <label class="mdl-textfield__label" for="registerEmail">Email...</label>
+		    <input class="mdl-textfield__input" type="text" id="loginEmail">
+		    <label class="mdl-textfield__label" for="loginEmail">Email...</label>
   		</div>
   		<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-		    <input class="mdl-textfield__input" type="password" id="registerPassword">
-		    <label class="mdl-textfield__label" for="registerPassword">Password...</label>
+		    <input class="mdl-textfield__input" type="password" id="loginPassword">
+		    <label class="mdl-textfield__label" for="loginPassword">Password...</label>
 		  </div>
     </div>
     <div class="mdl-dialog__actions">
+    	<button id="loginBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+  		Sign In
+			</button>
       <button id="registerBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
   		Register
 			</button>
 			<!-- MDL Spinner Component -->
-			<div id="registerProgress" class="mdl-spinner mdl-js-spinner is-active"></div>
-			<button id="closeBtn"type="button" class="mdl-button close">Cancel</button>
+			<div id="loginProgress" class="mdl-spinner mdl-js-spinner is-active"></div>
+			<button id="closeBtn"type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect close">Cancel</button>
     </div>
   </dialog>
 
-  <dialog id="signIn" class="mdl-dialog">
+  <!-- <dialog id="signIn" class="mdl-dialog">
     <h4 class="mdl-dialog__title">Sign In</h4>
     <div class="mdl-dialog__content">
     <p id="loginError"></p>
@@ -81,10 +83,10 @@
   		Sign In
 			</button>
 			<!-- MDL Spinner Component -->
-			<div id="loginProgress" class="mdl-spinner mdl-js-spinner is-active"></div>
+			<!-- <div id="loginProgress" class="mdl-spinner mdl-js-spinner is-active"></div>
 			<button id="closeBtn"type="button" class="mdl-button close">Cancel</button>
     </div>
-  </dialog>
+  </dialog> -->
 	<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
 	<script>
 	  // Initialize Firebase

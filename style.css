@@ -1,5 +1,5 @@
 * {
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 	font-family: 'Roboto', sans-serif;
 	outline: none;
 }
@@ -42,4 +42,7 @@ a:link, a:visited {
 	color: rgba(0,0,0,.87);
 	margin-left: 10px;
 	text-decoration: none;
+}
+.mdl-dialog {
+	width: 360px;
 }
