@@ -46,3 +46,19 @@ a:link, a:visited {
 .mdl-dialog {
 	width: 360px;
 }
+
+.mdl-layout {
+	align-items: center;
+  justify-content: center;
+}
+.mdl-layout__content {
+	padding: 24px;
+	flex: none;
+}
+
+.Logoandschrift {
+	opacity: 0.2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
