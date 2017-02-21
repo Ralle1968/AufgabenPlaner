@@ -36,6 +36,12 @@
 	position: absolute;
 }
 
+.hinweis {
+	top: 31vh;
+	right: 0px;
+	position: absolute;
+}
+
 a:link, a:visited {
 	font-family: 'Roboto', sans-serif;
 	font-size: 20px;
@@ -58,12 +64,12 @@ a:link, a:visited {
 
 .check {
 	width: 100%;
-	display: flex;
+	/*display: flex;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
+	position: absolute;*/
 	left: 0%;
-	top: 9.8%;
+	top: 22vh;
 	opacity: 0.2;
 }
 
@@ -75,8 +81,16 @@ a:link, a:visited {
 	position: absolute;
 	right: 7px;
 	cursor: pointer;
+	top: 20px;
 }
 
 .mdl-card__supporting-text {
 	margin-bottom: 30px;
+}
+
+#startTitel{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
 }

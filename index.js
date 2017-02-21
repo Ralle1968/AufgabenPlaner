@@ -1,55 +1,26 @@
-// firebase.auth().onAuthStateChanged(function(user) {
-//   if (user) {
-//     // User is signed in.
-//     $(".login-cover").hide();
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    $(".login-cover").hide();
     
-//     var dialog = document.querySelector('#signInAndRegister');
-//     if (! dialog.showModal) {
-//       dialogPolyfill.registerDialog(dialog1);
-//     }
-//     dialog.close();
 
-//   } else {
-//      //No user is signed in.
-//      $(".login-cover").show();
-//      var dialog = document.querySelector('#signInAndRegister');
-//      if (! dialog.showModal) {
-//        dialogPolyfill.registerDialog(dialog);
-//      }
-    
-//      // dialog.showModal();
-//    }
-// });
+  } else {
+     //No user is signed in.
+     $(".login-cover").show();
+     
+   }
+});
 
 var dialog = document.querySelector('#close');
-  // var showDialogButton = document.querySelector('#show-dialog');
-  //   // if (! dialog.showModal) {
-  //   //   dialogPolyfill.registerDialog(dialog);
-  //   // }
-  // showDialogButton.addEventListener('click', function() {
-  //   dialog.showModal();
-  // });
-    
-  dialog.addEventListener('click', function() {
-    alert('Closed!');
-  });
+dialog.addEventListener('click', function() {
+  window.location = '../start.html'
+});
 
-  // var dialog2 = document.querySelector('#register');
-  // var showDialogButton = document.querySelector('#show-register');
-  //   // if (! dialog.showModal) {
-  //   //   dialogPolyfill.registerDialog(dialog);
-  //   // }
-  // showDialogButton.addEventListener('click', function() {
-  //   dialog2.showModal();
-  // });
-    
-  // dialog2.querySelector('.close').addEventListener('click', function() {
-  //   dialog2.close();
-  // });
+ 
 
-  // $('#loginBtn').click(function(){
-  //   var email = $('#loginEmail').val();
-  //   var password = $('#loginPassword').val();
+  // $('#signinBtn').click(function(){
+  //   var email = $('#signinEmail').val();
+  //   var password = $('#signinPass').val();
   //   if (email !="" && password !="") {
   //     $('#loginProgress').show();
   //     $('#loginBtn').hide();
@@ -67,8 +38,8 @@ var dialog = document.querySelector('#close');
   // });
 
   //  $('#registerBtn').click(function(){
-  //   var email = $('#loginEmail').val();
-  //   var password = $('#loginPassword').val();
+  //   var email = $('#registerEmail').val();
+  //   var password = $('#registerPassword').val();
   //   if (email !="" && password !="") {
   //     $('#loginProgress').show();
   //     $('#registerBtn').hide();
