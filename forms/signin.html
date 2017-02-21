@@ -27,7 +27,7 @@
 						</div>
 						<div id="loginError"></div>
 				  	<div class="mdl-card__supporting-text">
-							<form action="#">
+							<form id="signinForm">
 								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 									<input class="mdl-textfield__input" type="text" id="signinEmail" />
 									<label class="mdl-textfield__label" for="signinEmail">E-Mail</label>
@@ -42,7 +42,7 @@
 							<button id="signinBtn" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Sign in</button>
 						</div>
 						<div class="mdl-card__actions mdl-card--border">
-							<a href="register.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Register</a>
+							<a id="regLink" href="register.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Noch keinen Account? Register</a>
 						</div>
 					</div>
 				</main>
@@ -64,8 +64,10 @@
 				      </nav>
 			    </div>
 		  </header>
+		  <p id="cu"></p>
 		  <div class="mdl-layout__drawer">
 		  </div>
+		  
 		</div>
 	<script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
 	<script>
