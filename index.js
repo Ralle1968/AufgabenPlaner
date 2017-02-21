@@ -2,7 +2,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     $(".login-cover").hide();
-    
+  
 
   } else {
      //No user is signed in.
@@ -11,31 +11,29 @@ firebase.auth().onAuthStateChanged(function(user) {
    }
 });
 
-var dialog = document.querySelector('#close');
-dialog.addEventListener('click', function() {
-  window.location = '../start.html'
-});
+// var dialog = document.querySelector('#close');
+// dialog.addEventListener('click', function() {
+//   window.location = '../start.html'
+// });
 
  
 
-  // $('#signinBtn').click(function(){
-  //   var email = $('#signinEmail').val();
-  //   var password = $('#signinPass').val();
-  //   if (email !="" && password !="") {
-  //     $('#loginProgress').show();
-  //     $('#loginBtn').hide();
-  //     $('#closeBtn').hide();
-  //     $('#registerBtn').hide();
+$('#signinBtn').click(function(){
+  var email = $('#signinEmail').val();
+  var password = $('#signinPass').val();
+  if (email !="" && password !="") {
+    $('#loginBtn').hide();
+    $('#closeBtn').hide();
+    $('#registerBtn').hide();
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
+      $('#loginError').show().text(error.message);
+      $('#loginProgress').hide();
+      $('#loginBtn').show();
+      $('#closeBtn').show();
+    });
 
-  //     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
-  //       $('#loginError').show().text(error.message);
-  //       $('#loginProgress').hide();
-  //       $('#loginBtn').show();
-  //       $('#closeBtn').show();
-  //     });
-
-  //   }
-  // });
+  }
+});
 
   //  $('#registerBtn').click(function(){
   //   var email = $('#registerEmail').val();
@@ -59,7 +57,7 @@ dialog.addEventListener('click', function() {
 
   $('#signOutBtn').click(function(){
     firebase.auth().signOut().then(function() {
-    // Sign-out successful.
+    alert("click!");
     }, function(error) {
     // An error happened.
     alert(error.message);

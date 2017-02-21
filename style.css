@@ -53,10 +53,10 @@ a:link, a:visited {
 	width: 360px;
 }
 
-.mdl-layout {
+/*.mdl-layout {
 	align-items: center;
   	justify-content: center;
-}
+}*/
 .mdl-layout__content {
 	padding: 24px;
 	flex: none;
