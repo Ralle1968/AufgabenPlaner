@@ -1,6 +1,12 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
+    var firebaseRef = firebase.database().ref();
+
+    firebaseRef.child("User: " + user.uid).set({
+    name:"Rallekopp"
+    });
+
     $(".login-cover").hide();
     $("#cu").append(user.email);
     
