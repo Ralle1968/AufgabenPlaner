@@ -1,25 +1,31 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    alert(user.email);
-    alert(user.uid);
-    alert(user.displayName);
+    // alert(user.email);
+    // alert(user.uid);
+    // alert(user.displayName);
+    //window.location = '../start.html'
     $(".login-cover").hide();
     $("#cu").append(user.displayName);
+    $("#signOutBtn").prepend(user.displayName);
     
   } else {
      //No user is signed in.
      $(".login-cover").show();
      //$("#cu").hide();
-     document.getElementById('signinForm').reset();
-     document.getElementById('registerForm').reset();
-   }
+    }
 });
 
 
-var dialog = document.querySelector('#close');
-dialog.addEventListener('click', function() {
-  window.location = '../start.html'
+var closer = document.querySelector('#signOutBtn');
+closer.addEventListener('click', function() {
+  firebase.auth().signOut().then(function() {
+  alert("click!");
+  window.location = 'start.html';
+  }, function(error) {
+  // An error happened.
+  alert(error.message);
+  });
 });
 
  
@@ -28,10 +34,21 @@ $('#signinBtn').click(function(){
   var email = $('#signinEmail').val();
   var password = $('#signinPass').val();
   if (email !="" && password !="") {
+
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
       $('#loginError').show().text(error.message);
     });
   }
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+    // User is signed in.
+    window.location ="../aufgaben.html"
+    } else {
+    // No user is signed in.
+
+  }
+});
+  document.getElementById('signinForm').reset();
 });
 
  $('#registerBtn').click(function(){
@@ -54,6 +71,7 @@ $('#signinBtn').click(function(){
       // Update successful.
       alert("Neu jetzt: " + user['displayName']);
       $("#cu").append(user.displayName);
+      $("#signOutBtn").prepend(user.displayName);
     }, function(error) {
       // An error happened.
     });
@@ -62,15 +80,13 @@ $('#signinBtn').click(function(){
 
   }
 });
-     
+  document.getElementById('registerForm').reset();   
 });
 
-  $('#signOutBtn').click(function(){
-    firebase.auth().signOut().then(function() {
+$(document).ready(function(){
+  $('#close').click(function(){
+    
     alert("click!");
     window.location = '../start.html';
-    }, function(error) {
-    // An error happened.
-    alert(error.message);
-    });
-  });
+  }); 
+});
